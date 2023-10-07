@@ -1,2 +1,10 @@
 .mole {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.mole img {
+  max-width: 100%;
+  height: auto;
 }
