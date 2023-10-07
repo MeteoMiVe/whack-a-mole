@@ -6,6 +6,7 @@
 
 * {
   font-family: lilita-one;
+  -webkit-user-drag: none; /* Can't seem to avoid 'dragging ghost images' entirely, but this reduces it */
 }
 
 html,
@@ -16,9 +17,20 @@ body,
 
 body {
   margin: 0;
+
   background-image: url('./assets/images/WAM_bg.jpg');
   background-position: center center;
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-size: cover;
+
+  cursor:
+    url('./assets/images/WAM_Hammer.png') 64 50,
+    auto;
+}
+
+body:active {
+  cursor:
+    url('./assets/images/WAM_Hammer_whack.png') 64 50,
+    auto;
 }
