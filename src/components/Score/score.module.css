@@ -1,2 +1,16 @@
 .score {
+  position: absolute;
+  left: 2.4vw;
+  top: 2.4vw;
+  width: fit-content;
+  display: flex;
+  flex-direction: column;
+  font-size: 2.4vw;
+  -webkit-text-stroke-color: white;
+  -webkit-text-stroke-width: 0.1vw;
+}
+
+.score > span:first-of-type {
+  font-size: 2.4vw;
+  color: red;
 }

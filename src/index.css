@@ -1,3 +1,13 @@
+/* Google font Lilita One, similar to the score font in the mockup */
+@font-face {
+  font-family: lilita-one;
+  src: url('./assets/fonts/LilitaOne/LilitaOne-Regular.ttf');
+}
+
+* {
+  font-family: lilita-one;
+}
+
 html,
 body,
 #root {
@@ -6,17 +16,9 @@ body,
 
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans',
-    'Droid Sans', 'Helvetica Neue', sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  background-image: url('./assets/WAM_bg.jpg');
+  background-image: url('./assets/images/WAM_bg.jpg');
   background-position: center center;
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-size: cover;
-}
-
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
 }
