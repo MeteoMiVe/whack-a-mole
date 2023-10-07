@@ -9,6 +9,7 @@ import logo from './logo.svg'
 console.log('gimme a warning')
 console.log('gimme a warning')
 console.log('gimme a warning')
+console.log('gimme a warning')
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
