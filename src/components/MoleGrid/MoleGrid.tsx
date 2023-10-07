@@ -1,24 +1,13 @@
-import React, { useState } from 'react';
+import React from 'react';
+import { useSelector } from 'react-redux';
 
+import { RootState } from '../../store/store';
 import useUUID from '../../utils/hooks/useUUID';
 import Mole from '../Mole/Mole';
 import css from './mole-grid.module.css';
 
 const MoleGrid = () => {
-  const [moleVisibilities] = useState([
-    false,
-    true,
-    false,
-    false,
-    false,
-    false,
-    false,
-    false,
-    false,
-    false,
-    false,
-    false
-  ]);
+  const moleVisibilities = useSelector((state: RootState) => state.game.moleVisibilities);
 
   const mapKeys = useUUID(moleVisibilities.length);
 

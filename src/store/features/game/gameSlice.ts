@@ -1,6 +1,14 @@
 import { createSlice } from '@reduxjs/toolkit';
 
-const initialState = {};
+export type GameSliceState = {
+  score: number;
+  moleVisibilities: boolean[];
+};
+
+const initialState: GameSliceState = {
+  score: 0,
+  moleVisibilities: new Array(12).fill(false)
+};
 
 /**
  * Slice representing global game state like playing time and score
@@ -8,9 +16,13 @@ const initialState = {};
 export const gameSlice = createSlice({
   name: 'game',
   initialState,
-  reducers: {}
+  reducers: {
+    addToScore: (state) => {
+      state.score += 100;
+    }
+  }
 });
 
-// export const {} = gameSlice.actions;
+export const { addToScore } = gameSlice.actions;
 
-export default gameSlice.reducer;
+export default gameSlice;
