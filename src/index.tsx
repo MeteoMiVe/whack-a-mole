@@ -3,17 +3,8 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
-import logo from './logo.svg'
-import logo from './logo.svg'
 
-console.log('gimme a warning')
-console.log('gimme a warning')
-console.log('gimme a warning')
-console.log('gimme a warning')
-
-const root = ReactDOM.createRoot(
-  document.getElementById('root') as HTMLElement
-);
+const root = ReactDOM.createRoot(document.getElementById('root') as HTMLElement);
 root.render(
   <React.StrictMode>
     <App />
