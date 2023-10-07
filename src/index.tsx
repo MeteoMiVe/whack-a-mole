@@ -4,7 +4,9 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import logo from './logo.svg'
+import logo from './logo.svg'
 
+console.log('gimme a warning')
 console.log('gimme a warning')
 console.log('gimme a warning')
 
