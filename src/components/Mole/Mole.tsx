@@ -1,8 +1,11 @@
+import { useEffect } from 'react';
+
 import holeImg from '../../assets/images/WAM_Hole.png';
 import moleImg from '../../assets/images/WAM_Mole.png';
 import whackSound from '../../assets/sounds/whack.mp3';
-import { whackMole } from '../../store/features/game/gameSlice';
-import { useAppDispatch } from '../../store/store';
+import { MOLE_TIMEOUT } from '../../config/game-config';
+import { showNewMole, whackMole } from '../../store/features/game/gameSlice';
+import { useAppDispatch, useAppSelector } from '../../store/store';
 import css from './mole.module.css';
 
 type Props = {
@@ -13,6 +16,7 @@ type Props = {
 const Mole = (props: Props) => {
   const { index, isVisible = false } = props;
 
+  const gameState = useAppSelector((state) => state.game.gameState);
   const dispatch = useAppDispatch();
 
   const handleWhack = () => {
@@ -25,6 +29,18 @@ const Mole = (props: Props) => {
       dispatch(whackMole(index));
     }
   };
+
+  useEffect(() => {
+    if (isVisible && gameState === 'running') {
+      // Keep mole visible for given timeout
+      const timeout = setTimeout(() => {
+        dispatch(showNewMole(index));
+      }, MOLE_TIMEOUT);
+
+      // Clear interval on unmount
+      return () => clearTimeout(timeout);
+    }
+  }, [isVisible, gameState]);
 
   return (
     <div className={css['mole']}>

@@ -1,12 +1,13 @@
 import { useEffect, useState } from 'react';
 
+import { GAME_DURATION } from '../../config/game-config';
 import WamSpan from '../../design-library/WamSpan/WamSpan';
 import { setGameState } from '../../store/features/game/gameSlice';
 import { useAppDispatch } from '../../store/store';
 import css from './game-timer.module.css';
 
 const GameTimer = () => {
-  const [time, setTime] = useState(120); // Game stops after 2 minutes (120s)
+  const [time, setTime] = useState(GAME_DURATION); // Game stops after given time
 
   const dispatch = useAppDispatch();
 
