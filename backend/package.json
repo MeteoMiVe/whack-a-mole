@@ -1,0 +1,17 @@
+{
+  "name": "wam-backend",
+  "version": "1.0.0",
+  "description": "Backend for 'Whack a mole' game",
+  "main": "index.js",
+  "scripts": {
+    "start": "tsc && node dist/app.js"
+  },
+  "author": "Michael Verhaeghe",
+  "license": "ISC",
+  "dependencies": {
+    "@types/express": "^4.17.18",
+    "@types/node": "^20.8.3",
+    "express": "^4.18.2",
+    "typescript": "^5.2.2"
+  }
+}
