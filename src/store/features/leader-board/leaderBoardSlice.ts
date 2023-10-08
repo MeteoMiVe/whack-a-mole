@@ -2,11 +2,13 @@ import axios from 'axios';
 
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
 
+import { API_ENDPOINT } from '../../../config/game-config';
+
 type Score = {
-  id: string;
+  _id: string;
   playerName: string;
   score: number;
-  timeStamp: string;
+  createdAt: string;
 };
 
 export type LeaderBoardSliceState = {
@@ -22,7 +24,7 @@ const initialState: LeaderBoardSliceState = {
 };
 
 export const fetchScores = createAsyncThunk('leaderBoard/fetchScores', () =>
-  axios.get<Score[]>('http://localhost:5000/api/scores').then((res) => res.data)
+  axios.get<Score[]>(API_ENDPOINT).then((res) => res.data)
 );
 
 /**
