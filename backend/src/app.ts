@@ -5,12 +5,6 @@ import connectDB from './config/db';
 import errorHandler from './middleware/errorMiddleware';
 import scoreRoutes from './routes/scoreRoutes';
 
-// Putting this here for now
-export type Score = {
-  playerName: string;
-  score: number;
-};
-
 // Load environment variables
 dotenv.config();
 
