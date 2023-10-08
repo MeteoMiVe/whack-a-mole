@@ -1,13 +1,9 @@
-import express, { Request, Response } from 'express';
+import express from 'express';
+
+import { getScores, postScore } from '../controllers/scoreController';
 
 const router = express.Router();
 
-router.get('/', (req: Request, res: Response) => {
-  res.status(200).json({ message: 'Get scores' });
-});
-
-router.post('/', (req: Request, res: Response) => {
-  res.status(200).json({ message: 'Post score' });
-});
+router.route('/').get(getScores).post(postScore);
 
 export default router;
