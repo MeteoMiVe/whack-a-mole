@@ -1,4 +1,6 @@
-import { PayloadAction, createSlice } from '@reduxjs/toolkit';
+import { createSlice, PayloadAction } from '@reduxjs/toolkit';
+
+import { generateRandomNumber } from '../../../utils/functions/numbers';
 
 /**
  * Represents the 3 possible states of the game:
@@ -14,21 +16,30 @@ export type GameSliceState = {
   moleVisibilities: boolean[];
 };
 
+// Show a random mole on init
+const initialMoleVisibilities = new Array(12).fill(false);
+initialMoleVisibilities[generateRandomNumber(0, 11)] = true;
+
 const initialState: GameSliceState = {
   gameState: 'running',
   score: 0,
-  moleVisibilities: new Array(12).fill(false)
+  moleVisibilities: initialMoleVisibilities
 };
 
 /**
- * Slice representing global game state like playing time and score
+ * Slice representing global game state
  */
 export const gameSlice = createSlice({
   name: 'game',
   initialState,
   reducers: {
-    addToScore: (state) => {
+    whackMole: (state, action: PayloadAction<number>) => {
+      // Hide the whacked mole
+      state.moleVisibilities[action.payload] = false;
+      // Add to our score
       state.score += 100;
+      // Show a new random mole
+      state.moleVisibilities[generateRandomNumber(0, 11)] = true;
     },
     setGameState: (state, action: PayloadAction<GameState>) => {
       state.gameState = action.payload;
@@ -36,6 +47,6 @@ export const gameSlice = createSlice({
   }
 });
 
-export const { addToScore, setGameState } = gameSlice.actions;
+export const { whackMole, setGameState } = gameSlice.actions;
 
 export default gameSlice;

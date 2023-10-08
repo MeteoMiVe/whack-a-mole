@@ -10,8 +10,8 @@ const MoleGrid = () => {
 
   return (
     <div className={css['mole-grid']}>
-      {moleVisibilities.map((mv, index) => (
-        <Mole key={`mole-${mapKeys[index]}`} isVisible={mv} />
+      {moleVisibilities.map((isVisible, index) => (
+        <Mole key={`mole-${mapKeys[index]}`} index={index} isVisible={isVisible} />
       ))}
     </div>
   );
