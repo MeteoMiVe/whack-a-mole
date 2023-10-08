@@ -1,6 +1,7 @@
 import dotenv from 'dotenv';
 import express from 'express';
 
+import connectDB from './config/db';
 import errorHandler from './middleware/errorMiddleware';
 import scoreRoutes from './routes/scoreRoutes';
 
@@ -16,6 +17,9 @@ dotenv.config();
 // Create Express instance
 const app = express();
 const port = process.env.PORT;
+
+// Connect to MongoDB
+connectDB();
 
 // Support JSON request bodies
 app.use(express.json());
