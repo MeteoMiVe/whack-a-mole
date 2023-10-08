@@ -1,10 +1,14 @@
 import { useEffect, useState } from 'react';
 
 import WamSpan from '../../design-library/WamSpan/WamSpan';
+import { setGameState } from '../../store/features/game/gameSlice';
+import { useAppDispatch } from '../../store/store';
 import css from './game-timer.module.css';
 
 const GameTimer = () => {
   const [time, setTime] = useState(120); // Game stops after 2 minutes (120s)
+
+  const dispatch = useAppDispatch();
 
   useEffect(() => {
     // Decrement every second (1000ms)
@@ -12,6 +16,9 @@ const GameTimer = () => {
       if (time > 0) {
         setTime(time - 1);
       } else {
+        // End the game
+        dispatch(setGameState('ended'));
+
         // Clear timer when countdown stops
         clearInterval(timer);
       }
