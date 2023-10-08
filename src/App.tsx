@@ -1,11 +1,13 @@
 import './App.css';
 
-import Game from './components/Game/Game';
+// import Game from './components/Game/Game';
+import LeaderBoard from './components/LeaderBoard/LeaderBoard';
 
 const App = () => {
   return (
     <div className="App">
-      <Game />
+      <LeaderBoard />
+      {/*   <Game /> */}
     </div>
   );
 };

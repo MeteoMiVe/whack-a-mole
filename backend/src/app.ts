@@ -1,3 +1,4 @@
+import cors from 'cors';
 import dotenv from 'dotenv';
 import express from 'express';
 
@@ -14,6 +15,9 @@ const port = process.env.PORT;
 
 // Connect to MongoDB
 connectDB();
+
+// Enable CORS
+app.use(cors());
 
 // Support JSON request bodies
 app.use(express.json());
