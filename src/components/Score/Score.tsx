@@ -1,3 +1,4 @@
+import WamSpan from '../../design-library/WamSpan/WamSpan';
 import { useAppSelector } from '../../store/store';
 import css from './score.module.css';
 
@@ -6,8 +7,8 @@ const Score = () => {
 
   return (
     <div className={css['score']}>
-      <span>Score</span>
-      <span>{score}</span>
+      <WamSpan text="Score" color="red" />
+      <WamSpan text={score.toString()} />
     </div>
   );
 };
