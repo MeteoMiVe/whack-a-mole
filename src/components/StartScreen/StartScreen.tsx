@@ -1,5 +1,3 @@
-import React from 'react';
-
 import css from './start-screen.module.css';
 
 const StartScreen = () => {

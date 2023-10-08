@@ -1,10 +1,8 @@
-import React from 'react';
-import { useDispatch } from 'react-redux';
-
 import holeImg from '../../assets/images/WAM_Hole.png';
 import moleImg from '../../assets/images/WAM_Mole.png';
 import whackSound from '../../assets/sounds/whack.mp3';
 import { addToScore } from '../../store/features/game/gameSlice';
+import { useAppDispatch } from '../../store/store';
 import css from './mole.module.css';
 
 type Props = {
@@ -14,7 +12,7 @@ type Props = {
 const Mole = (props: Props) => {
   const { isVisible = false } = props;
 
-  const dispatch = useDispatch();
+  const dispatch = useAppDispatch();
 
   const whack = () => {
     if (isVisible) {

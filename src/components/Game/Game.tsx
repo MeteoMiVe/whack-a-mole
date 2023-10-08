@@ -1,5 +1,3 @@
-import React from 'react';
-
 import MoleGrid from '../MoleGrid/MoleGrid';
 import Score from '../Score/Score';
 import css from './game.module.css';
