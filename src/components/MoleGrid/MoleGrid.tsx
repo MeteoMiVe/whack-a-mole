@@ -1,3 +1,4 @@
+import FlexElements from '../../design-library/FlexElements/FlexElements';
 import { useAppSelector } from '../../store/store';
 import useUUID from '../../utils/hooks/useUUID';
 import Mole from '../Mole/Mole';
@@ -9,11 +10,13 @@ const MoleGrid = () => {
   const mapKeys = useUUID(moleVisibilities.length);
 
   return (
-    <div className={css['mole-grid']}>
-      {moleVisibilities.map((isVisible, index) => (
-        <Mole key={`mole-${mapKeys[index]}`} index={index} isVisible={isVisible} />
-      ))}
-    </div>
+    <FlexElements className={css['mole-grid-wrapper']} justifyContent="center" alignItems="center">
+      <div className={css['mole-grid']}>
+        {moleVisibilities.map((isVisible, index) => (
+          <Mole key={`mole-${mapKeys[index]}`} index={index} isVisible={isVisible} />
+        ))}
+      </div>
+    </FlexElements>
   );
 };
 

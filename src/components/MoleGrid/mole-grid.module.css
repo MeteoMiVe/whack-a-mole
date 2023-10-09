@@ -1,3 +1,7 @@
+.mole-grid-wrapper {
+  height: inherit;
+}
+
 .mole-grid {
   height: 66%;
   width: 66%;
