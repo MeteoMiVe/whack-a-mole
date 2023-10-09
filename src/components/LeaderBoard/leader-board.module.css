@@ -1,2 +1,23 @@
+.leader-board-wrapper {
+  height: inherit;
+  background-color: rgba(0, 0, 0, 0.3);
+  user-select: none;
+}
+
 .leader-board {
+  padding-top: 0.8rem;
+  background-color: #01a147;
+  width: 33%;
+  border: 0.16rem solid rgba(255, 255, 255, 0.8);
+  border-radius: 2%;
+}
+
+.score-list {
+  margin-top: 0.8rem;
+  overflow: hidden;
+  overflow-y: auto;
+}
+
+.score-list > :nth-child(odd) {
+  background-color: rgba(0, 0, 0, 0.2);
 }

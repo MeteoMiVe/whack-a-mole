@@ -1,21 +1,17 @@
-import { useEffect } from 'react';
-
-import { fetchScores } from '../../store/features/leader-board/leaderBoardSlice';
-import { useAppDispatch, useAppSelector } from '../../store/store';
+import FlexElements from '../../design-library/FlexElements/FlexElements';
+import WamSpan from '../../design-library/WamSpan/WamSpan';
+import ScoreList from '../ScoreList/ScoreList';
 import css from './leader-board.module.css';
 
 const LeaderBoard = () => {
-  const dispatch = useAppDispatch();
-
-  const leaderBoardState = useAppSelector((state) => state.leaderBoard);
-
-  useEffect(() => {
-    dispatch(fetchScores());
-  }, []);
-
-  if (leaderBoardState.loading) return <p>Loading</p>;
-
-  return <div className={css['leader-board']}>Success!</div>;
+  return (
+    <FlexElements className={css['leader-board-wrapper']} justifyContent="center" alignItems="center">
+      <FlexElements className={css['leader-board']} flexDirection="column">
+        <WamSpan text="Leaderboard" color="red" />
+        <ScoreList />
+      </FlexElements>
+    </FlexElements>
+  );
 };
 
 export default LeaderBoard;

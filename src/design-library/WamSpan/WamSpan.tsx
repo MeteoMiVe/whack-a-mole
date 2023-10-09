@@ -13,7 +13,7 @@ type Props = {
 const WamSpan = (props: Props) => {
   const { text, color = WAM_COLORS.black, className } = props;
 
-  // Using inline style is bad practise because of new object creation
+  // Using inline style is bad practise because of new object creation, using memoized object instead
   const style = useMemo(() => {
     const resStyle: CSSProperties = {};
 

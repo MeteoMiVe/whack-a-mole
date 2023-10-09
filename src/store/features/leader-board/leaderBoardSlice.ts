@@ -2,14 +2,8 @@ import axios from 'axios';
 
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
 
+import { Score } from '../../../api-types/scores';
 import { API_ENDPOINT } from '../../../config/game-config';
-
-type Score = {
-  _id: string;
-  playerName: string;
-  score: number;
-  createdAt: string;
-};
 
 export type LeaderBoardSliceState = {
   loading: boolean;
