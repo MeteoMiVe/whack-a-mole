@@ -4,14 +4,14 @@ import React from 'react';
 import css from './wam-button.module.css';
 
 type Props = {
-  id: string; // For potential testing
   text: string;
+  dataTestId?: string;
   disabled?: boolean;
   onClick: () => void;
 };
 
 const WamButton = (props: Props) => {
-  const { id, text, disabled = false, onClick } = props;
+  const { dataTestId, text, disabled = false, onClick } = props;
 
   const handleClick = (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
     e.preventDefault();
@@ -20,7 +20,7 @@ const WamButton = (props: Props) => {
 
   return (
     <button
-      id={id}
+      data-test-id={dataTestId}
       className={classNames(css['wam-button'], { [css['disabled']]: disabled })}
       disabled={disabled}
       onClick={handleClick}

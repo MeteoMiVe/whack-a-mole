@@ -7,7 +7,7 @@ const Score = () => {
 
   return (
     <div className={css['score']}>
-      <WamSpan text="Score" color="red" />
+      <WamSpan dataTestId="txt-score" text="Score" color="red" />
       <WamSpan text={score.toString()} />
     </div>
   );

@@ -29,7 +29,7 @@ const StartScreen = () => {
         <div>
           <WamSpan text="<< Wack a mole! >>" color="red" />
           <FlexElements justifyContent="center">
-            <WamButton id="btn-new-game" text="Start game" onClick={handleClick} />
+            <WamButton dataTestId="btn-new-game" text="Start game" onClick={handleClick} />
           </FlexElements>
         </div>
 

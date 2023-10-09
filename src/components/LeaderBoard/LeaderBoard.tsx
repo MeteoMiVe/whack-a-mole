@@ -19,10 +19,10 @@ const LeaderBoard = () => {
 
   return (
     <Dialog>
-      <WamSpan text="Leaderboard" color="red" />
+      <WamSpan dataTestId="txt-leader-board" text="Leaderboard" color="red" />
       <ScoreList />
       <FlexElements justifyContent="center">
-        <WamButton id="btn-new-game" text="Whack me for a new game!" onClick={handleClick} />
+        <WamButton dataTestId="btn-next-game" text="Whack me for a new game!" onClick={handleClick} />
       </FlexElements>
     </Dialog>
   );

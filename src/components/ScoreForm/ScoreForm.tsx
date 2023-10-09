@@ -39,13 +39,18 @@ const ScoreForm = () => {
     <>
       <span>Please enter your name:</span>
       <form>
-        <WamInput id="player-name" type="text" value={playerName} onChange={setPlayerName} />
+        <WamInput dataTestId="player-name" type="text" value={playerName} onChange={setPlayerName} />
       </form>
 
       {error && <WamSpan text={`Error: ${error}`} color="red" />}
 
       <FlexElements justifyContent="center">
-        <WamButton id="btn-new-game" text="Submit my score" disabled={!playerName} onClick={handleClick} />
+        <WamButton
+          dataTestId="btn-submit-player-name"
+          text="Submit my score"
+          disabled={!playerName}
+          onClick={handleClick}
+        />
       </FlexElements>
     </>
   );
