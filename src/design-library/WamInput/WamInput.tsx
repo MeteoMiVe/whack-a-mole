@@ -3,7 +3,7 @@ import { ChangeEvent, HTMLInputTypeAttribute } from 'react';
 import css from './wam-input.module.css';
 
 type Props = {
-  id: string;
+  id: string; // For potential testing
   type: HTMLInputTypeAttribute | undefined;
   value: string;
   onChange: (val: string) => void;

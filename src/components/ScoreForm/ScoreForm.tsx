@@ -10,8 +10,6 @@ import { setGameState } from '../../store/features/game/gameSlice';
 import { useAppDispatch, useAppSelector } from '../../store/store';
 import { playSound } from '../../utils/functions/sounds';
 
-//import css from './score-form.module.css';
-
 const ScoreForm = () => {
   const score = useAppSelector((state) => state.game.score);
   const dispatch = useAppDispatch();
