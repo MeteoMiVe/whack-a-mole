@@ -2,7 +2,7 @@ import axios from 'axios';
 
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
 
-import { Score } from '../../../api-types/scores';
+import { AddScoreRequest, AddScoreRequestRejectedPayload, Score } from '../../../api-types/scores';
 import { API_ENDPOINT } from '../../../config/game-config';
 
 export type LeaderBoardSliceState = {
@@ -19,6 +19,13 @@ const initialState: LeaderBoardSliceState = {
 
 export const fetchScores = createAsyncThunk('leaderBoard/fetchScores', () =>
   axios.get<Score[]>(API_ENDPOINT).then((res) => res.data)
+);
+
+export const addScore = createAsyncThunk('leaderBoard/addScore', (requestBody: AddScoreRequest, { rejectWithValue }) =>
+  axios
+    .post<Score>(API_ENDPOINT, requestBody)
+    .then((res) => res.data)
+    .catch((e: Error) => rejectWithValue(e))
 );
 
 /**
@@ -39,6 +46,10 @@ export const leaderBoardSlice = createSlice({
     builder.addCase(fetchScores.rejected, (state, action) => {
       state.loading = false;
       state.error = action.error.message || 'Failed to fetch scores, unknown error';
+    });
+    builder.addCase(addScore.rejected, (state, action) => {
+      const rejectedPayload = action.payload as AddScoreRequestRejectedPayload;
+      state.error = rejectedPayload.response.data.message;
     });
   }
 });
