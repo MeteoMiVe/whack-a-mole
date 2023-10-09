@@ -1,0 +1,4 @@
+# Exclude these cypress folders
+/downloads
+/screenshots
+/videos
