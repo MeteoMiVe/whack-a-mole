@@ -1,5 +1,6 @@
 .wam-input {
   height: 2rem;
+  min-width: 16rem;
   width: 50%;
   border: none; /* border default override */
   border: 0.16rem solid rgb(190, 238, 190);

@@ -1,5 +1,6 @@
 .score-list {
   margin-top: 0.8rem;
+  width: 100%;
 }
 
 .score-list > :nth-child(odd) {

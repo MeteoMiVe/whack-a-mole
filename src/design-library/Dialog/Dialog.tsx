@@ -10,7 +10,7 @@ type Props = {
 const Dialog = (props: Props) => {
   return (
     <FlexElements className={css['dialog-wrapper']} justifyContent="center" alignItems="center">
-      <FlexElements className={css['dialog']} flexDirection="column">
+      <FlexElements className={css['dialog']} flexDirection="column" alignItems="center">
         {props.children}
       </FlexElements>
     </FlexElements>
