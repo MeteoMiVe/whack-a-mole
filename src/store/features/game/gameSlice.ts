@@ -3,10 +3,11 @@ import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 import { generateRandomNumber, generateRandomNumberFromPrevious } from '../../../utils/functions/numbers';
 
 /**
- * Represents the 3 possible states of the game:
+ * Represents the 4 possible states of the game:
  * - 'waiting' for a player to press start
  * - 'running' while the player is playing the game
- * - 'ended' when time has run out, name popup shows and leader board is shown
+ * - 'ended' when time has run out and name popup shows
+ * - 'leaderBoard' when the player submitted his/her name and leaderBoard is shown
  */
 export type GameState = 'waiting' | 'running' | 'ended' | 'leaderBoard';
 
@@ -16,8 +17,9 @@ export type GameSliceState = {
   moleVisibilities: boolean[];
 };
 
-// Show a random mole on init
 const initialMoleVisibilities = new Array(12).fill(false);
+
+// Show a random mole on init
 initialMoleVisibilities[generateRandomNumber()] = true;
 
 const initialState: GameSliceState = {
@@ -46,6 +48,7 @@ export const gameSlice = createSlice({
     },
     startNewGame: (state) => {
       state.gameState = 'running';
+      // Reset score
       state.score = 0;
     },
     showNewMole: (state, action: PayloadAction<number>) => {
