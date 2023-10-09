@@ -26,7 +26,7 @@ export const postScore = asyncHandler(async (req: Request, res: Response) => {
   const { playerName, score } = scoreRequestBody;
 
   // Error handling
-  if (!playerName && !score) {
+  if (!playerName && typeof score !== 'number') {
     res.status(400);
     throw new Error("Please fill in your name, your score wasn't sent to us");
   }
@@ -36,7 +36,7 @@ export const postScore = asyncHandler(async (req: Request, res: Response) => {
     throw new Error('Please fill in your name');
   }
 
-  if (!score) {
+  if (typeof score !== 'number') {
     res.status(400);
     throw new Error('Your score was not sent to us');
   }
