@@ -2,11 +2,10 @@ import { useEffect } from 'react';
 
 import holeImg from '../../assets/images/WAM_Hole.png';
 import moleImg from '../../assets/images/WAM_Mole.png';
-import whackSound from '../../assets/sounds/whack.mp3';
 import { MOLE_TIMEOUT } from '../../config/game-config';
 import { showNewMole, whackMole } from '../../store/features/game/gameSlice';
 import { useAppDispatch, useAppSelector } from '../../store/store';
-import { playSound } from '../../utils/functions/sounds';
+import { playWhackSound } from '../../utils/functions/sounds';
 import css from './mole.module.css';
 
 type Props = {
@@ -23,7 +22,7 @@ const Mole = (props: Props) => {
   const handleWhack = () => {
     if (isVisible) {
       // Play whack sound
-      playSound(whackSound);
+      playWhackSound();
 
       // Update our score
       dispatch(whackMole(index));

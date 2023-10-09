@@ -21,7 +21,7 @@ const initialMoleVisibilities = new Array(12).fill(false);
 initialMoleVisibilities[generateRandomNumber()] = true;
 
 const initialState: GameSliceState = {
-  gameState: 'running',
+  gameState: 'waiting',
   score: 0,
   moleVisibilities: initialMoleVisibilities
 };

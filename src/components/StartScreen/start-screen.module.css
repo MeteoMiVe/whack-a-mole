@@ -1,2 +1,5 @@
-.start-screen {
+.start-screen > img {
+  padding: 0.8vw;
+  width: 4.8vw;
+  height: auto;
 }

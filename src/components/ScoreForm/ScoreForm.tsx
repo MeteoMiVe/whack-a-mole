@@ -1,6 +1,5 @@
 import { useState } from 'react';
 
-import whackSound from '../../assets/sounds/whack.mp3';
 import Dialog from '../../design-library/Dialog/Dialog';
 import FlexElements from '../../design-library/FlexElements/FlexElements';
 import WamButton from '../../design-library/WamButton/WamButton';
@@ -9,7 +8,7 @@ import WamSpan from '../../design-library/WamSpan/WamSpan';
 import { setGameState } from '../../store/features/game/gameSlice';
 import { addScore } from '../../store/features/leader-board/leaderBoardSlice';
 import { useAppDispatch, useAppSelector } from '../../store/store';
-import { playSound } from '../../utils/functions/sounds';
+import { playWhackSound } from '../../utils/functions/sounds';
 
 const ScoreForm = () => {
   const score = useAppSelector((state) => state.game.score);
@@ -21,7 +20,7 @@ const ScoreForm = () => {
 
   const handleClick = () => {
     // Play whack sound
-    playSound(whackSound);
+    playWhackSound();
 
     // Send values to MongoDB
     dispatch(

@@ -1,11 +1,10 @@
-import whackSound from '../../assets/sounds/whack.mp3';
 import Dialog from '../../design-library/Dialog/Dialog';
 import FlexElements from '../../design-library/FlexElements/FlexElements';
 import WamButton from '../../design-library/WamButton/WamButton';
 import WamSpan from '../../design-library/WamSpan/WamSpan';
 import { startNewGame } from '../../store/features/game/gameSlice';
 import { useAppDispatch } from '../../store/store';
-import { playSound } from '../../utils/functions/sounds';
+import { playWhackSound } from '../../utils/functions/sounds';
 import ScoreList from '../ScoreList/ScoreList';
 
 const LeaderBoard = () => {
@@ -13,7 +12,7 @@ const LeaderBoard = () => {
 
   const handleClick = () => {
     // Play whack sound
-    playSound(whackSound);
+    playWhackSound();
     // Start new game
     dispatch(startNewGame());
   };
