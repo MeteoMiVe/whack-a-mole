@@ -1,4 +1,3 @@
-import { GAME_DURATION } from '../../src/config/game-config';
 import { gameIsRunning, visitGame } from '../fixtures/fixtures';
 
 describe('Run entire game', () => {
@@ -17,8 +16,8 @@ describe('Run entire game', () => {
     gameIsRunning();
 
     // Wait for 2 minutes (with 5s margin) until the game ends
-    // Convert to milliseconds
-    cy.wait(GAME_DURATION + 5 * 1000);
+    // (Importing the config variable didn't work)
+    cy.wait(125000);
 
     // Enter player name
     const playerNameInput = cy.get('[data-test-id="player-name"]');
