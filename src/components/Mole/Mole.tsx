@@ -6,6 +6,7 @@ import whackSound from '../../assets/sounds/whack.mp3';
 import { MOLE_TIMEOUT } from '../../config/game-config';
 import { showNewMole, whackMole } from '../../store/features/game/gameSlice';
 import { useAppDispatch, useAppSelector } from '../../store/store';
+import { playSound } from '../../utils/functions/sounds';
 import css from './mole.module.css';
 
 type Props = {
@@ -21,9 +22,8 @@ const Mole = (props: Props) => {
 
   const handleWhack = () => {
     if (isVisible) {
-      // Play the whack sound
-      const audio = new Audio(whackSound);
-      audio.play();
+      // Play whack sound
+      playSound(whackSound);
 
       // Update our score
       dispatch(whackMole(index));

@@ -44,6 +44,10 @@ export const gameSlice = createSlice({
     setGameState: (state, action: PayloadAction<GameState>) => {
       state.gameState = action.payload;
     },
+    startNewGame: (state) => {
+      state.gameState = 'running';
+      state.score = 0;
+    },
     showNewMole: (state, action: PayloadAction<number>) => {
       // Hide current mole
       state.moleVisibilities[action.payload] = false;
@@ -53,6 +57,6 @@ export const gameSlice = createSlice({
   }
 });
 
-export const { whackMole, setGameState, showNewMole } = gameSlice.actions;
+export const { whackMole, setGameState, startNewGame, showNewMole } = gameSlice.actions;
 
 export default gameSlice;
