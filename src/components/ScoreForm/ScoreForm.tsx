@@ -1,6 +1,5 @@
 import { useState } from 'react';
 
-import Dialog from '../../design-library/Dialog/Dialog';
 import FlexElements from '../../design-library/FlexElements/FlexElements';
 import WamButton from '../../design-library/WamButton/WamButton';
 import WamInput from '../../design-library/WamInput/WamInput';
@@ -37,11 +36,7 @@ const ScoreForm = () => {
   };
 
   return (
-    <Dialog>
-      <WamSpan text="Time's up!" color="red" />
-
-      <span>{`Your score: ${score}`}</span>
-
+    <>
       <span>Please enter your name:</span>
       <form>
         <WamInput id="player-name" type="text" value={playerName} onChange={setPlayerName} />
@@ -52,7 +47,7 @@ const ScoreForm = () => {
       <FlexElements justifyContent="center">
         <WamButton id="btn-new-game" text="Submit my score" disabled={!playerName} onClick={handleClick} />
       </FlexElements>
-    </Dialog>
+    </>
   );
 };
 
