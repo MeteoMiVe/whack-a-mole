@@ -8,7 +8,7 @@ import { generateRandomNumber, generateRandomNumberFromPrevious } from '../../..
  * - 'running' while the player is playing the game
  * - 'ended' when time has run out, name popup shows and leader board is shown
  */
-export type GameState = 'waiting' | 'running' | 'ended';
+export type GameState = 'waiting' | 'running' | 'ended' | 'leaderBoard';
 
 export type GameSliceState = {
   gameState: GameState;

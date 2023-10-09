@@ -1,0 +1,9 @@
+.wam-input {
+  height: 2rem;
+  width: 50%;
+  border: none; /* border default override */
+  border: 0.16rem solid rgb(190, 238, 190);
+  border-radius: 0.4rem;
+  font-size: large;
+  margin: 0 auto;
+}

@@ -18,3 +18,8 @@ button:active {
     url('../../assets/images/WAM_Hammer_whack.png') 64 50,
     auto;
 }
+
+.disabled {
+  background-color: #73abfa;
+  cursor: not-allowed;
+}
